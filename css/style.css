@@ -53,6 +53,10 @@ main {
   color: black;
 }
 
+#backspace {
+  grid-column: span 2;
+}
+
 /*
 ** Media Queries
 */
