@@ -10,42 +10,61 @@ body {
   height: 100%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 main {
-  width: 100%;
-  height: 100%;
+  flex: 19;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   border: 1rem solid rgba(230, 224, 224, 0.9);
 }
 
 #display {
+  flex: 2;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: rgba(15, 11, 11, 0.801);
+}
+
+#history,
+#result {
   flex: 1;
-  background: rgba(0, 0, 0, 0.5);
-  font-size: 3rem;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin: 1rem;
-  padding: 1rem;
+  font-size: 4rem;
+}
+
+#history {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.719);
 }
 
 #buttons {
-  flex: 3;
+  flex: 8;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0.2rem;
+  grid-gap: 0.4rem;
 }
 
-.btn {
-  background: rgba(0, 0, 0, 0.5);
-  font-size: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#all-clear {
+  grid-column: span 2;
+}
+
+button {
+  background: black;
+  color: white;
+  font-size: 2.5rem;
+  border: none;
 }
 
 #equal-to {
@@ -53,8 +72,12 @@ main {
   color: black;
 }
 
-#backspace {
-  grid-column: span 2;
+footer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
 }
 
 /*

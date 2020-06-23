@@ -11,29 +11,40 @@
   </head>
   <body>
     <main>
-      <div id="display">123</div>
+      <div id="display">
+        <div id="history">10 x 2</div>
+        <div id="result">20</div>
+      </div>
       <div id="buttons">
-        <div class="btn operator" id="clear">C</div>
-        <div class="btn operator" id="toggle-sign">+/-</div>
-        <div class="btn operator" id="backspace">BS</div>
-        <div class="btn number">7</div>
-        <div class="btn number">8</div>
-        <div class="btn number">9</div>
-        <div class="btn operator" id="div">/</div>
-        <div class="btn number">4</div>
-        <div class="btn number">5</div>
-        <div class="btn number">6</div>
-        <div class="btn operator" id="mul">*</div>
-        <div class="btn number">1</div>
-        <div class="btn number">2</div>
-        <div class="btn number">3</div>
-        <div class="btn operator" id="sub">-</div>
-        <div class="btn" id="decimal">.</div>
-        <div class="btn number">0</div>
-        <div class="btn operator" id="equal-to">=</div>
-        <div class="btn operator" id="add">+</div>
+        <button class="operator" id="all-clear">AC</button>
+        <button class="operator" id="negator">+/-</button>
+        <button class="operator" id="backspace">BS</button>
+
+        <button class="number" value="7">7</button>
+        <button class="number" value="8">8</button>
+        <button class="number" value="9">9</button>
+        <button class="operator" id="divide">/</button>
+
+        <button class="number" value="4">4</button>
+        <button class="number" value="5">5</button>
+        <button class="number" value="6">6</button>
+        <button class="operator" id="multiply">x</button>
+
+        <button class="number" value="1">1</button>
+        <button class="number" value="2">2</button>
+        <button class="number" value="3">3</button>
+        <button class="operator" id="subtract">-</button>
+
+        <button class="number" value=".">.</button>
+        <button class="number" value="0">0</button>
+        <button class="operator" id="equal-to">=</button>
+        <button class="operator" id="add">+</button>
       </div>
     </main>
+
+    <footer>
+      <p>Coded by Mugilan</p>
+    </footer>
 
     <script src="js/script.js"></script>
   </body>
