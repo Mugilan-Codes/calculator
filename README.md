@@ -1,6 +1,6 @@
 # Calculator
 
-A Responsive Calculator
+A Responsive Calculator ( Mobile First Approach )
 
 ## Inspiration
 
@@ -11,3 +11,8 @@ A Responsive Calculator
 [Minimalist Calculator by Ed Riwaldo](https://dribbble.com/shots/6184376-Minimalist-Calculator)
 
 ![Idea - 2](design/idea-2.gif)
+
+## Resources
+
+- [CSS Breakpoints](https://flaviocopes.com/css-breakpoints/) - Used this
+- [CSS Media Queries](https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/)
