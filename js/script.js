@@ -49,15 +49,20 @@ numbers__button.forEach((number) =>
 
 const storePrevValue = function () {
   operator = this.value;
-  prevValue = currValue;
-
-  console.log({ result, operator });
+  prevValue += currValue;
+  currValue = '';
 };
 
 const calculateAnswer = function () {
-  operate(operator, prevValue, currValue);
+  const result = operate(operator, prevValue, currValue);
+
+  resultDisplay__div.textContent = result;
 };
 
 operators__button.forEach((operator) =>
   operator.addEventListener('click', storePrevValue)
 );
+
+const equalsTo = document.getElementById('equal-to');
+
+equalsTo.addEventListener('click', calculateAnswer);
