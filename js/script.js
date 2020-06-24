@@ -51,8 +51,6 @@ const storePrevValue = function () {
   operator = this.value;
   prevValue = currValue;
 
-  const result = calculateAnswer();
-
   console.log({ result, operator });
 };
 
