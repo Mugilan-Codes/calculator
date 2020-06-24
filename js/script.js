@@ -13,6 +13,7 @@ const div = (a, b) => a / b;
 const neg = (a, _) => -a;
 
 const operate = (operator, a, b) => {
+  console.log({ operator, a, b });
   operator = FUNCTION_NAMES[operator]();
   a = Number(a);
   b = Number(b);
@@ -55,8 +56,13 @@ const calculateAnswer = function () {
 
   storedValue = prevValue;
   prevValue = currValue;
+  operator = this.id;
   resultValue = operate(operator, storedValue, prevValue);
-  operator = this.value;
+
+  historyDisplay__div.textContent = `${storedValue} ${
+    storedValue && this.value
+  } ${prevValue}`;
+  resultDisplay__div.textContent = resultValue;
   currValue = '';
 };
 
