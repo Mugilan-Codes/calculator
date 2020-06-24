@@ -21,13 +21,16 @@ const operate = (operator, a, b) => {
 };
 
 const numbers__button = document.querySelectorAll('#buttons .number');
+const historyDisplay__div = document.getElementById('history');
 const resultDisplay__div = document.getElementById('result');
-
 const operators__button = document.querySelectorAll('#buttons .operator');
 
-let currValue = '',
+let storedValue = '',
   prevValue = '',
+  resultValue = '',
+  currValue = '',
   operator;
+
 const fillDisplay = function () {
   // prevents two or more decimal points
   if (currValue.includes('.') && this.value === '.') return;
@@ -47,22 +50,16 @@ numbers__button.forEach((number) =>
   number.addEventListener('click', fillDisplay)
 );
 
-const storePrevValue = function () {
+const calculateAnswer = function () {
+  console.log(this.value, this.id);
+
+  storedValue = prevValue;
+  prevValue = currValue;
+  resultValue = operate(operator, storedValue, prevValue);
   operator = this.value;
-  prevValue += currValue;
   currValue = '';
 };
 
-const calculateAnswer = function () {
-  const result = operate(operator, prevValue, currValue);
-
-  resultDisplay__div.textContent = result;
-};
-
 operators__button.forEach((operator) =>
-  operator.addEventListener('click', storePrevValue)
+  operator.addEventListener('click', calculateAnswer)
 );
-
-const equalsTo = document.getElementById('equal-to');
-
-equalsTo.addEventListener('click', calculateAnswer);
