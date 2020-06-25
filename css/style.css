@@ -87,28 +87,31 @@ footer {
 
 /* mobile landscape: > 640px */
 @media (min-width: 640px) {
-  body {
-    background: rgb(0, 0, 0);
+  main {
+    flex: 18;
+  }
+
+  footer {
+    flex: 2;
+  }
+
+  #display {
+    flex: 3;
+  }
+
+  #buttons {
+    flex: 7;
   }
 }
 
 /* tablet portrait: > 768px */
 @media (min-width: 768px) {
-  body {
-    background: red;
-  }
 }
 
 /* tablet landscape: > 1024px */
 @media (min-width: 1024px) {
-  body {
-    background: rgb(0, 0, 0);
-  }
 }
 
 /* laptop: > 1280px */
 @media (min-width: 1280px) {
-  body {
-    background: red;
-  }
 }
