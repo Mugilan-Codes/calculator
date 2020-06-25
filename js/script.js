@@ -13,7 +13,6 @@ const div = (a, b) => a / b;
 const neg = (a, _) => -a;
 
 const operate = (operator, a, b) => {
-  console.log({ operator, a, b });
   operator = FUNCTION_NAMES[operator]();
   a = Number(a);
   b = Number(b);
@@ -36,7 +35,7 @@ const fillDisplay = function () {
   // prevents two or more decimal points
   if (currValue.includes('.') && this.value === '.') return;
 
-  if (currValue.length > 14) return;
+  if (currValue.length > 13) return;
 
   if (currValue === '0') {
     currValue = this.value;
@@ -52,8 +51,6 @@ numbers__button.forEach((number) =>
 );
 
 const calculateAnswer = function () {
-  console.log(this.value, this.id);
-
   storedValue = prevValue;
   prevValue = currValue;
   operator = this.id;
@@ -62,7 +59,11 @@ const calculateAnswer = function () {
   historyDisplay__div.textContent = `${storedValue} ${
     storedValue && this.value
   } ${prevValue}`;
+
   resultDisplay__div.textContent = resultValue;
+
+  storedValue = prevValue;
+  prevValue = resultValue;
   currValue = '';
 };
 
