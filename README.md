@@ -2,6 +2,12 @@
 
 A Responsive Calculator ( Mobile First Approach )
 
+## TODO
+
+- More Styles
+- Refactor Code
+- Make it a fully working calculator
+
 ## Resources
 
 - [CSS Breakpoints](https://flaviocopes.com/css-breakpoints/)
