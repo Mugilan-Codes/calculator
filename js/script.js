@@ -3,14 +3,12 @@ const FUNCTION_NAMES = {
   sub: () => sub,
   mul: () => mul,
   div: () => div,
-  neg: () => neg,
 };
 
 const add = (a, b) => a + b;
 const sub = (a, b) => a - b;
 const mul = (a, b) => a * b;
 const div = (a, b) => a / b;
-const neg = (a, _) => -a;
 
 const operate = (operator, a, b) => {
   operator = FUNCTION_NAMES[operator]();
@@ -27,9 +25,10 @@ const operators__button = document.querySelectorAll('#buttons .operator');
 
 let storedValue = '',
   prevValue = '',
-  resultValue = '',
+  resultValue,
   currValue = '',
-  operator;
+  operator,
+  operatorSymbol;
 
 const fillDisplay = function () {
   // prevents two or more decimal points
@@ -51,19 +50,15 @@ numbers__button.forEach((number) =>
 );
 
 const calculateAnswer = function () {
-  storedValue = prevValue;
-  prevValue = currValue;
+  if (operator) {
+    historyDisplay__div.textContent = `${prevValue} ${operatorSymbol} ${currValue}`;
+    currValue = operate(operator, prevValue, currValue);
+    resultDisplay__div.textContent = currValue;
+  }
+
   operator = this.id;
-  resultValue = operate(operator, storedValue, prevValue);
-
-  historyDisplay__div.textContent = `${storedValue} ${
-    storedValue && this.value
-  } ${prevValue}`;
-
-  resultDisplay__div.textContent = resultValue;
-
-  storedValue = prevValue;
-  prevValue = resultValue;
+  operatorSymbol = this.value;
+  prevValue = currValue;
   currValue = '';
 };
 
