@@ -7,6 +7,7 @@ A Responsive Calculator ( Mobile First Approach )
 - More Styles
 - Refactor Code
 - Make it a fully working calculator
+- Complete for [Extra Credits](https://www.theodinproject.com/lessons/calculator)
 
 ## Resources
 
